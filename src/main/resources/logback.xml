@@ -5,9 +5,10 @@
 			<pattern>%d{HH:mm:ss:SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
 		</encoder>
 	</appender>
-	<root level="WARN">
+	<root level="INFO">
 		<appender-ref ref="STDOUT"/>
 	</root>
 	<logger name="org.apache.shiro" level="INFO"/>
 	<logger name="com.chy" level="TRACE"/>	
+	<logger name="org.springframework" level="DEBUG"/>
 </configuration>
