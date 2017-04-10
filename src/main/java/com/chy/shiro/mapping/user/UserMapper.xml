@@ -35,5 +35,9 @@
 				<if test="password_salt!=null">#{password_salt},</if>
 			</trim>
 	</insert>
+	
+	<select id="queryUsers" resultMap="BaseResultMap" >
+		select * from users
+	</select>
 
 </mapper>

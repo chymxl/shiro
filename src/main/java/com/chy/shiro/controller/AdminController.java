@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.chy.shiro.entity.User;
@@ -26,6 +27,11 @@ public class AdminController {
 	public String addUser(User user){
 		userService.insertUser(user);
 		return "true";
+	}
+	
+	@RequestMapping(value="user/query", method=RequestMethod.GET)
+	public String queryUsers(@RequestParam int pageNo, @RequestParam int pageSize){
+		return Utils.convertResult(true, userService.queryByPage(pageNo, pageSize));
 	}
 
 }
