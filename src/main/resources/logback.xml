@@ -5,10 +5,21 @@
 			<pattern>%d{HH:mm:ss:SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
 		</encoder>
 	</appender>
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${catalina.base}/logs/itest.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${catalina.base}/logs/itest.%d{yyyy-MM-dd}.log</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
 	<root level="INFO">
 		<appender-ref ref="STDOUT"/>
+		<appender-ref ref="FILE"/>
 	</root>
 	<logger name="org.apache.shiro" level="INFO"/>
 	<logger name="com.chy" level="TRACE"/>	
 	<logger name="org.springframework" level="DEBUG"/>
+	<logger name="org.mybatis" level="TRACE"/>
 </configuration>

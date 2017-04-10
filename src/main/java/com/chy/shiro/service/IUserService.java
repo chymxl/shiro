@@ -6,6 +6,6 @@ public interface IUserService {
 	
 	public User getUser(String username);
 	
-	public void addUser(User user);
+	public void insertUser(User user);
 
 }

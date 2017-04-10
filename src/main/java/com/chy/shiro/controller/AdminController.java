@@ -24,7 +24,7 @@ public class AdminController {
 	
 	@RequestMapping(value="user/add",method=RequestMethod.POST)
 	public String addUser(User user){
-		userService.addUser(user);
+		userService.insertUser(user);
 		return "true";
 	}
 

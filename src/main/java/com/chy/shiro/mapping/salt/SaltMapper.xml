@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chy.shiro.dao.ISaltDAO">
+	<resultMap type="com.chy.shiro.entity.PasswordSalt" id="allColumns">
+		<id property="id" column="id" jdbcType="VARCHAR"/>
+		<result property="salt" column="salt" jdbcType="INTEGER"/>
+	</resultMap>
+	<select id="getSalt" resultType="com.chy.shiro.entity.PasswordSalt">
+		select id, salt from salts for update
+	</select>
+	<update id="updateSalt" parameterType="com.chy.shiro.entity.PasswordSalt">
+		update salts set salt=#{salt} where id=#{id}
+	</update>
+</mapper>
