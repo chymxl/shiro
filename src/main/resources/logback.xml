@@ -19,7 +19,7 @@
 		<appender-ref ref="FILE"/>
 	</root>
 	<logger name="org.apache.shiro" level="INFO"/>
-	<logger name="com.chy" level="TRACE"/>	
-	<logger name="org.springframework" level="DEBUG"/>
-	<logger name="org.mybatis" level="TRACE"/>
+	<logger name="com.chy" level="INFO"/>	
+	<logger name="org.springframework" level="WARN"/>
+	<logger name="org.mybatis" level="WARN"/>
 </configuration>

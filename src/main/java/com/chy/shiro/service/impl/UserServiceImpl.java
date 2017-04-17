@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.chy.shiro.controller.Util;
 import com.chy.shiro.dao.ISaltDAO;
 import com.chy.shiro.dao.IUserDAO;
 import com.chy.shiro.entity.PasswordSalt;
@@ -31,6 +32,7 @@ public class UserServiceImpl implements IUserService{
 
 	@Override
 	public void insertUser(User user) {
+		log.info((String)Util.getAttribute("name"));
 		PasswordSalt salt = saltDAO.getSalt();
 		int num = salt.getSalt();
 		user.setPassword_salt(num + "");

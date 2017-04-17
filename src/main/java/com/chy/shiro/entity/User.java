@@ -1,7 +1,13 @@
 package com.chy.shiro.entity;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8184353397502278525L;
 	public String id;
 	public String username;
 	public String password;
